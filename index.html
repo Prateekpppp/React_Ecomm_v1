@@ -14,10 +14,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      $(document).ready(function(){
+
+        var category_swiper = new Swiper(".category-carousel", {
+          slidesPerView: 8,
+          spaceBetween: 30,
+          speed: 500,
+          navigation: {
+            nextEl: ".category-carousel-next",
+            prevEl: ".category-carousel-prev",
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            991: {
+              slidesPerView: 5,
+            },
+            1500: {
+              slidesPerView: 8,
+            },
+          }
+        });
+        
+        $(".products-carousel").each(function(){
+          var $el_id = $(this).attr('id');
+
+          var products_swiper = new Swiper("#"+$el_id+" .swiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            speed: 500,
+            navigation: {
+              nextEl: "#"+$el_id+" .products-carousel-next",
+              prevEl: "#"+$el_id+" .products-carousel-prev",
+            },
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+              991: {
+                slidesPerView: 4,
+              },
+              1500: {
+                slidesPerView: 5,
+              },
+            }
+          });
+        });
+
+    });
+
+    </script>
+
   </body>
 </html>
