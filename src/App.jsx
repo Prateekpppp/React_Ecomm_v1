@@ -11,6 +11,8 @@ import Sidebar from './components/includes/Sidebar';
 import Index from './components/pages/Index';
 import Footer from './components/includes/Footer';
 // import Symbol from './components/includes/Symbol';
+import { Route, Routes } from 'react-router-dom';
+import Product from './components/pages/Product';
 
 function App() {
 
@@ -18,9 +20,14 @@ function App() {
     <>
       {/* <Symbol /> */}
       <Pages />
+      
       <Sidebar />
       <Header />
-      <Index />
+      <Routes>
+        <Route path='/' element={<Index/>} />
+        <Route path='/product' element={<Product/>} />
+      </Routes>
+      {/* <Index /> */}
       <Footer />
     </>
   )

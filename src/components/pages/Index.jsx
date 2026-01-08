@@ -12,7 +12,7 @@ function Index() {
       <Banner />
       <CategorySection />
       <ProductSection />
-      <section className="py-3">
+      <section className="py-5">
         <div className="container-lg">
           <div className="row">
             <div className="col-md-12">
