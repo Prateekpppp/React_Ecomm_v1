@@ -13,6 +13,8 @@ import Footer from './components/includes/Footer';
 // import Symbol from './components/includes/Symbol';
 import { Route, Routes } from 'react-router-dom';
 import Product from './components/pages/Product';
+import Masterpage from './components/pages/Masterpage';
+import Products from './components/pages/Products';
 
 function App() {
 
@@ -25,7 +27,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Index/>} />
-        <Route path='/product' element={<Product/>} />
+        <Route path='/view' element={<Masterpage/>} >
+          <Route path='products' element={<Products/>} />
+          <Route path='product' element={<Product/>} />
+        </Route>
       </Routes>
       {/* <Index /> */}
       <Footer />

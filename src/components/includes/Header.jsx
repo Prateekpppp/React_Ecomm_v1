@@ -1,5 +1,6 @@
 import React from 'react'
 import toggle from '../../assets/images/toggle.png'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -10,9 +11,9 @@ function Header() {
                 
                 <div className="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
                     <div className="d-flex align-items-center my-3 my-sm-0">
-                    <a href="index.html">
+                    <Link to='/'>
                         <img src="images/logo.svg" alt="logo" className="img-fluid" />
-                    </a>
+                    </Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
@@ -50,18 +51,12 @@ function Header() {
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                         <ul className="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                        <li><a href="index.html" className="dropdown-item">About Us </a></li>
-                        <li><a href="index.html" className="dropdown-item">Shop </a></li>
-                        <li><a href="index.html" className="dropdown-item">Single Product </a></li>
-                        <li><a href="index.html" className="dropdown-item">Cart </a></li>
-                        <li><a href="index.html" className="dropdown-item">Checkout </a></li>
-                        <li><a href="index.html" className="dropdown-item">Blog </a></li>
-                        <li><a href="index.html" className="dropdown-item">Single Post </a></li>
-                        <li><a href="index.html" className="dropdown-item">Styles </a></li>
-                        <li><a href="index.html" className="dropdown-item">Contact </a></li>
-                        <li><a href="index.html" className="dropdown-item">Thank You </a></li>
-                        <li><a href="index.html" className="dropdown-item">My Account </a></li>
-                        <li><a href="index.html" className="dropdown-item">404 Error </a></li>
+                            <li>
+                                <Link to='/view/products' className="dropdown-item">Products </Link>
+                            </li>
+                            <li>
+                                <Link to='/view/product' className="dropdown-item">Product </Link>
+                            </li>
                         </ul>
                     </li>
                     </ul>

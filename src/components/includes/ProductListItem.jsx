@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ProductListItem() {
   return (
     <>
         <div className="product-item swiper-slide">
             <figure>
-            <a href="single-product.html" title="Product Title">
-                <img src="images/product-thumb-1.png" alt="Product Thumbnail" className="tab-image" />
-            </a>
+            <Link to="/view/product" title="Product Title">
+                <img src="/images/product-thumb-1.png" alt="Product Thumbnail" className="tab-image" />
+            </Link>
             </figure>
             <div className="d-flex flex-column text-center">
             <h3 className="fs-6 fw-normal">Whole Wheat Sandwich Bread</h3>
