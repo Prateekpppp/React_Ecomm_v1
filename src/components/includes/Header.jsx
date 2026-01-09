@@ -12,7 +12,7 @@ function Header() {
                 <div className="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
                     <div className="d-flex align-items-center my-3 my-sm-0">
                     <Link to='/'>
-                        <img src="images/logo.svg" alt="logo" className="img-fluid" />
+                        <img src="/images/logo.svg" alt="logo" className="img-fluid" />
                     </Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"

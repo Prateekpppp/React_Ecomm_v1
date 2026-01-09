@@ -9,7 +9,7 @@ function Footer() {
 
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="footer-menu">
-                <img src="images/logo.svg" width="240" height="70" alt="logo" />
+                <img src="/images/logo.svg" width="240" height="70" alt="logo" />
                 <div className="social-links mt-3">
                   <ul className="d-flex list-unstyled gap-2">
                     <li>
