@@ -2,6 +2,7 @@
 
 # Environment vars
 This project uses the following environment variables:
+
 appUrl=domain_name
 
 # Pre-requisites
@@ -29,7 +30,7 @@ npm run dev
 
 
 # Project Structure
-.
+```bash
 ├───public
 │   └───images
 └───src
@@ -40,3 +41,4 @@ npm run dev
     └───components
         ├───includes
         └───pages
+```
