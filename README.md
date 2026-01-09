@@ -1,4 +1,5 @@
 # react_Ecomm_v1
+Application url: https://radiant-florentine-dc45ae.netlify.app/
 
 # Environment vars
 This project uses the following environment variables:
