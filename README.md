@@ -31,7 +31,6 @@ npm run dev
 
 
 # Project Structure
-
 ```bash
 ├───public
 │   └───images
