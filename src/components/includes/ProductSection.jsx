@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductListItem from './ProductListItem'
 
-function ProductSection() {
+function ProductSection({products}) {
   return (
     <>
       <section className="pb-5">
@@ -27,32 +27,18 @@ function ProductSection() {
 
               <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
                     
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                <div className="col">
-                  <ProductListItem />
-                </div>
-                <div className="col">
-                  <ProductListItem />
-                </div>
+                  {products.map((item,key) =>{
+                    if(item.tags.includes('beauty')){
+                      return (
+                        <>
+                          <div className="col" key={key}>
+                            <ProductListItem item={item} />
+  
+                          </div>
+                        </>
+                      )
+                    }
+                  })}
               </div>
 
 

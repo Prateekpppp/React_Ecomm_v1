@@ -29,7 +29,7 @@ function App() {
         <Route path='/' element={<Index/>} />
         <Route path='/view' element={<Masterpage/>} >
           <Route path='products' element={<Products/>} />
-          <Route path='product' element={<Product/>} />
+          <Route path='product/:id' element={<Product/>} />
         </Route>
       </Routes>
       {/* <Index /> */}

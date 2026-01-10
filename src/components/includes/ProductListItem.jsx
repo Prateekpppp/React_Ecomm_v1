@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function ProductListItem() {
+function ProductListItem({item}) {
+    
+    // const [item,setItem] = useState(item);
+    if(!item){
+        return 'No data';
+    }
   return (
     <>
         <div className="product-item swiper-slide">
             <figure>
-            <Link to="/view/product" title="Product Title">
-                <img src="/images/product-thumb-1.png" alt="Product Thumbnail" className="tab-image" />
+            <Link to={`/view/product/${item.id}`} title="Product Title">
+                {/* <img src="/images/product-thumb-1.png" alt="Product Thumbnail" className="tab-image" /> */}
+                <img src={item.images[0]} alt="Product Thumbnail" className="tab-image" />
             </Link>
             </figure>
             <div className="d-flex flex-column text-center">

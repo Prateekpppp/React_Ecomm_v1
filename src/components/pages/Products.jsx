@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import ProductListItem from '../includes/ProductListItem'
 import Productsidebar from '../includes/Productsidebar'
 
 function Products() {
+    // const data =  [1, 3, 7, 5, 6];
+    const [data,setData] = useState([]);
+    
+    useEffect(()=>{
+        
+        axios.get(import.meta.env.VITE_productEndPoint+'/products')
+        .then(res=>{
+            console.log('res-',res.data.products);
+            
+            setData(res.data.products);
+        })
+        .catch(err => {
+            console.log(err);
+            
+        });
+    },[]);
   return (
     <>
         <div className="container-lg my-5">
@@ -29,13 +46,16 @@ function Products() {
                     </div>
                     <div className="row">
                         {
-                            ([1, 3, 7, 5, 6]).map((item, key) => (
-                                <>
-                                    <div className="col-sm-4 px-1 mb-2" key={key}>
-                                        <ProductListItem />
-                                    </div>
-                                </>
-                            ))
+                            data.map((item, key) => {
+                                
+                                return (
+                                    <>
+                                        <div className="col-sm-4 px-1 mb-2" key={key}>
+                                            <ProductListItem item={item} />
+                                        </div>
+                                    </>
+                                )
+                            })
                         }
                     </div>
                     <nav className="text-center py-5 my-5" aria-label="Page navigation">

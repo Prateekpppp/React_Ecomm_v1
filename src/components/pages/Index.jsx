@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from '../includes/Banner'
 import CategorySection from '../includes/CategorySection'
 import ProductSection from '../includes/ProductSection'
 import InPageBanner from '../includes/InPageBanner'
 import ProductListItem from '../includes/ProductListItem'
 import NewsLetter from '../includes/NewsLetter'
+import axios from 'axios'
 
 function Index() {
+  const [products,setProducts] = useState([]);
+
+  useEffect(()=>{
+    axios.get(import.meta.env.VITE_productEndPoint+'/products')
+    .then(res=>{
+      console.log('rth--',res.data.products);
+      
+      setProducts(res.data.products);
+    })
+    .catch(err=>{
+      console.log(err);
+    });
+  },[]);
+
   return (
     <>
       <Banner />
       <CategorySection />
-      <ProductSection />
+      <ProductSection products={products} />
       <section className="py-5">
         <div className="container-lg">
           <div className="row">
@@ -54,13 +69,11 @@ function Index() {
               <div className="swiper">
                 <div className="swiper-wrapper">
 
-                  {([6,1,2,5,8,4,46]).map((item,key) =>{
-                    console.log('item-',item);
-                    console.log('key-',key);
+                  {products.map((item,key) =>{
                     
                     return (
                       <>
-                        <ProductListItem />
+                        <ProductListItem item={item} />
                       </>
                     )
                   })}
@@ -146,7 +159,7 @@ function Index() {
       <div class="container-lg">
         <h2 class="my-4">People are also looking for</h2>
         {
-          ([,3,2,5,6,8,,7]).map((item,key) =>{
+          ([,3,2,5,6,8,7]).map((item,key) =>{
             return (
               <>
                 <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
