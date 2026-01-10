@@ -8,17 +8,18 @@ function Product() {
     const [data,setData] = useState([]);
     
     useEffect(()=>{
-        console.log('436');
-        
-        axios.get(import.meta.env.VITE_productEndPoint+'/product/'+id)
-        .then(res=>{
-            setData(res.data);
-        })
-        .catch(err => {
-            console.log(err);
-            
-        });
-    },[]);
+        const fetchData = async () =>{
+            await axios.get(import.meta.env.VITE_productEndPoint+'/product/'+id)
+            .then(res=>{
+                setData(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+                
+            });
+        }
+        fetchData();
+    },[data]);
 
     // if(!data.length){
     //     return 'No Data Found';
@@ -56,7 +57,7 @@ function Product() {
                                 <span className="me-1">
                                     <del>$200</del>
                                 </span>
-                                <span>$100</span>
+                                <span>{data.price}</span>
                             </p>
 
                             <strong><p style={{fontSize: '20px'}}>{data.title}</p></strong>

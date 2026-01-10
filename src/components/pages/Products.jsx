@@ -11,7 +11,6 @@ function Products() {
         
         axios.get(import.meta.env.VITE_productEndPoint+'/products')
         .then(res=>{
-            console.log('res-',res.data.products);
             
             setData(res.data.products);
         })
@@ -19,7 +18,7 @@ function Products() {
             console.log(err);
             
         });
-    },[]);
+    },[data]);
   return (
     <>
         <div className="container-lg my-5">
