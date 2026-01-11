@@ -131,22 +131,22 @@ function Index() {
         </div>
       </section> */}
 
-    <section class="pb-4 my-4">
-      <div class="container-lg">
+    <section className="pb-4 my-4">
+      <div className="container-lg">
 
-        <div class="bg-warning pt-5 rounded-5">
-          <div class="container">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-4">
-                <h2 class="mt-5">Download Organic App</h2>
+        <div className="bg-warning pt-5 rounded-5">
+          <div className="container">
+            <div className="row justify-content-center align-items-center">
+              <div className="col-md-4">
+                <h2 className="mt-5">Download Organic App</h2>
                 <p>Online Orders made easy, fast and reliable</p>
-                <div class="d-flex gap-2 flex-wrap mb-5">
+                <div className="d-flex gap-2 flex-wrap mb-5">
                   <a href="#" title="App store"><img src="images/img-app-store.png" alt="app-store" /></a>
                   <a href="#" title="Google Play"><img src="images/img-google-play.png" alt="google-play" /></a>
                 </div>
               </div>
-              <div class="col-md-5">
-                <img src="images/banner-onlineapp.png" alt="phone" class="img-fluid" />
+              <div className="col-md-5">
+                <img src="images/banner-onlineapp.png" alt="phone" className="img-fluid" />
               </div>
             </div>
           </div>
@@ -155,14 +155,14 @@ function Index() {
       </div>
     </section>
 
-    <section class="py-4">
-      <div class="container-lg">
-        <h2 class="my-4">People are also looking for</h2>
+    <section className="py-4">
+      <div className="container-lg">
+        <h2 className="my-4">People are also looking for</h2>
         {
           ([,3,2,5,6,8,7]).map((item,key) =>{
             return (
               <>
-                <a href="#" class="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
+                <a href="#" className="btn btn-warning me-2 mb-2">Blue diamon almonds</a>
               </>
             )
           })
@@ -170,17 +170,17 @@ function Index() {
       </div>
     </section>
     
-    <section class="py-5">
-      <div class="container-lg">
-        <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
-          <div class="col">
-            <div class="card mb-3 border border-dark-subtle p-3">
-              <div class="text-dark mb-3">
+    <section className="py-5">
+      <div className="container-lg">
+        <div className="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
+          <div className="col">
+            <div className="card mb-3 border border-dark-subtle p-3">
+              <div className="text-dark mb-3">
                 <svg width="32" height="32"><use xlink:href="#package"></use></svg>
               </div>
-              <div class="card-body p-0">
+              <div className="card-body p-0">
                 <h5>Free delivery</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
               </div>
             </div>
           </div>

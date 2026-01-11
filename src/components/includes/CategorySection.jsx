@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 
 function CategorySection() {
@@ -27,33 +28,18 @@ function CategorySection() {
                     <div className="col-md-12">
 
                         <div className="category-carousel swiper">
-                        <div className="swiper-wrapper">
-                            <a href="category.html" className="nav-link swiper-slide text-center">
-                            <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
-                            <h4 className="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
-                            </a>
-                            <a href="category.html" className="nav-link swiper-slide text-center">
-                            <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
-                            <h4 className="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
-                            </a>
-                            <a href="category.html" className="nav-link swiper-slide text-center">
-                            <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
-                            <h4 className="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
-                            </a>
-                            <a href="category.html" className="nav-link swiper-slide text-center">
-                            <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
-                            <h4 className="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
-                            </a>
-                            <a href="category.html" className="nav-link swiper-slide text-center">
-                            <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
-                            <h4 className="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
-                            </a>
-                            <a href="category.html" className="nav-link swiper-slide text-center">
-                            <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
-                            <h4 className="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
-                            </a>
-                            
-                        </div>
+                            <div className="swiper-wrapper">
+                                <Link to='/view/products' className="nav-link swiper-slide text-center">
+                                <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
+                                <h4 className="fs-6 mt-3 fw-normal category-title">All Products</h4>
+                                </Link>
+                                {/* </a> */}
+                                <Link to='/view/products/beauty' className="nav-link swiper-slide text-center">
+                                <img src="images/category-thumb-1.jpg" className="rounded-circle" alt="Category Thumbnail" />
+                                <h4 className="fs-6 mt-3 fw-normal category-title">Beauty</h4>
+                                </Link>
+                                
+                            </div>
                         </div>
 
                     </div>

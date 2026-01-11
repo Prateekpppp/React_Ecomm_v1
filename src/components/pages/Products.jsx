@@ -2,23 +2,31 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import ProductListItem from '../includes/ProductListItem'
 import Productsidebar from '../includes/Productsidebar'
+import { useParams } from 'react-router-dom';
 
 function Products() {
     // const data =  [1, 3, 7, 5, 6];
+    const {category} = useParams();
     const [data,setData] = useState([]);
     
     useEffect(()=>{
         
         axios.get(import.meta.env.VITE_productEndPoint+'/products')
         .then(res=>{
-            
-            setData(res.data.products);
+            let data = res.data.products;
+    console.log('category--',category);
+            if(category){
+                data = data.filter(item => {
+                    return item.category == category;
+                });
+            }
+            setData(data);
         })
         .catch(err => {
             console.log(err);
             
         });
-    },[data]);
+    },[]);
   return (
     <>
         <div className="container-lg my-5">

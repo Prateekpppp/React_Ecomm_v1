@@ -57,6 +57,9 @@ function Header() {
                             <li>
                                 <Link to='/view/product' className="dropdown-item">Product </Link>
                             </li>
+                            <li>
+                                <Link to='/view/cart' className="dropdown-item">Cart </Link>
+                            </li>
                         </ul>
                     </li>
                     </ul>

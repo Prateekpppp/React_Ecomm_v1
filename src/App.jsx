@@ -15,6 +15,7 @@ import { Route, Routes } from 'react-router-dom';
 import Product from './components/pages/Product';
 import Masterpage from './components/pages/Masterpage';
 import Products from './components/pages/Products';
+import Cart from './components/pages/cart/Cart';
 
 function App() {
 
@@ -29,7 +30,9 @@ function App() {
         <Route path='/' element={<Index/>} />
         <Route path='/view' element={<Masterpage/>} >
           <Route path='products' element={<Products/>} />
+          <Route path='products/:category' element={<Products/>} />
           <Route path='product/:id' element={<Product/>} />
+          <Route path='cart' element={<Cart/>} />
         </Route>
       </Routes>
       {/* <Index /> */}
