@@ -38,7 +38,7 @@ function BannerContent() {
             <div className="card border-0 bg-primary rounded-0 p-4 text-light">
               <div className="row">
                 <div className="col-md-3 text-center">
-                  <svg width="60" height="60"><use xlink:href="#fresh"></use></svg>
+                  <svg width="60" height="60"><use xlinkHref="#fresh"></use></svg>
                 </div>
                 <div className="col-md-9">
                   <div className="card-body p-0">
@@ -53,7 +53,7 @@ function BannerContent() {
             <div className="card border-0 bg-secondary rounded-0 p-4 text-light">
               <div className="row">
                 <div className="col-md-3 text-center">
-                  <svg width="60" height="60"><use xlink:href="#organic"></use></svg>
+                  <svg width="60" height="60"><use xlinkHref="#organic"></use></svg>
                 </div>
                 <div className="col-md-9">
                   <div className="card-body p-0">
@@ -68,7 +68,7 @@ function BannerContent() {
             <div className="card border-0 bg-danger rounded-0 p-4 text-light">
               <div className="row">
                 <div className="col-md-3 text-center">
-                  <svg width="60" height="60"><use xlink:href="#delivery"></use></svg>
+                  <svg width="60" height="60"><use xlinkHref="#delivery"></use></svg>
                 </div>
                 <div className="col-md-9">
                   <div className="card-body p-0">

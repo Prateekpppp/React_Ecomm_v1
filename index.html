@@ -49,33 +49,30 @@
           }
         });
         
-        $(".products-carousel").each(function(){
-          var $el_id = $(this).attr('id');
-
-          var products_swiper = new Swiper("#"+$el_id+" .swiper", {
-            slidesPerView: 5,
-            spaceBetween: 30,
-            speed: 500,
-            navigation: {
-              nextEl: "#"+$el_id+" .products-carousel-next",
-              prevEl: "#"+$el_id+" .products-carousel-prev",
+        var category_swiper = new Swiper(".products-carousel", {
+          slidesPerView: 8,
+          spaceBetween: 30,
+          speed: 500,
+          navigation: {
+            nextEl: ".products-carousel-next",
+            prevEl: ".products-carousel-prev",
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 2,
             },
-            breakpoints: {
-              0: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              991: {
-                slidesPerView: 4,
-              },
-              1500: {
-                slidesPerView: 5,
-              },
-            }
-          });
+            768: {
+              slidesPerView: 3,
+            },
+            991: {
+              slidesPerView: 5,
+            },
+            1500: {
+              slidesPerView: 8,
+            },
+          }
         });
+        
 
     });
 

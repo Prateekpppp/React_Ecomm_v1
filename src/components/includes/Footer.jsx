@@ -14,27 +14,27 @@ function Footer() {
                   <ul className="d-flex list-unstyled gap-2">
                     <li>
                       <a href="#" className="btn btn-outline-light">
-                        <svg width="16" height="16"><use xlink:href="#facebook"></use></svg>
+                        <svg width="16" height="16"><use xlinkHref="#facebook"></use></svg>
                       </a>
                     </li>
                     <li>
                       <a href="#" className="btn btn-outline-light">
-                        <svg width="16" height="16"><use xlink:href="#twitter"></use></svg>
+                        <svg width="16" height="16"><use xlinkHref="#twitter"></use></svg>
                       </a>
                     </li>
                     <li>
                       <a href="#" className="btn btn-outline-light">
-                        <svg width="16" height="16"><use xlink:href="#youtube"></use></svg>
+                        <svg width="16" height="16"><use xlinkHref="#youtube"></use></svg>
                       </a>
                     </li>
                     <li>
                       <a href="#" className="btn btn-outline-light">
-                        <svg width="16" height="16"><use xlink:href="#instagram"></use></svg>
+                        <svg width="16" height="16"><use xlinkHref="#instagram"></use></svg>
                       </a>
                     </li>
                     <li>
                       <a href="#" className="btn btn-outline-light">
-                        <svg width="16" height="16"><use xlink:href="#amazon"></use></svg>
+                        <svg width="16" height="16"><use xlinkHref="#amazon"></use></svg>
                       </a>
                     </li>
                   </ul>

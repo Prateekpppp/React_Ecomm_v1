@@ -23,12 +23,12 @@ function NewsLetter() {
                     <div className="col-md-5 p-3">
                         <form>
                         <div className="mb-3">
-                            <label for="name" className="form-label d-none">Name</label>
+                            <label htmlFor="name" className="form-label d-none">Name</label>
                             <input type="text"
-                            className="form-control form-control-md rounded-0" name="name" id="name" placeholder="Name" />
+                            className="form-control form-control-md rounded-0" defaultValue="" name="name" id="name" placeholder="Name" />
                         </div>
                         <div className="mb-3">
-                            <label for="email" className="form-label d-none">Email</label>
+                            <label htmlFor="email" className="form-label d-none">Email</label>
                             <input type="email" className="form-control form-control-md rounded-0" name="email" id="email" placeholder="Email Address" />
                         </div>
                         <div className="d-grid gap-2">
