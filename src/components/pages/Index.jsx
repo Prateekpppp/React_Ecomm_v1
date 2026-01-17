@@ -6,16 +6,67 @@ import InPageBanner from '../includes/InPageBanner'
 import ProductListItem from '../includes/ProductListItem'
 import NewsLetter from '../includes/NewsLetter'
 import axios from 'axios'
+import Swiper from 'swiper'
 
+function runSwiper(){
+  new Swiper(".category-carousel", {
+          slidesPerView: 8,
+          spaceBetween: 30,
+          speed: 500,
+          navigation: {
+            nextEl: ".category-carousel-next",
+            prevEl: ".category-carousel-prev",
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            991: {
+              slidesPerView: 5,
+            },
+            1500: {
+              slidesPerView: 8,
+            },
+          }
+        });
+
+  new Swiper(".products-carousel", {
+          slidesPerView: 8,
+          spaceBetween: 30,
+          speed: 500,
+          navigation: {
+            nextEl: ".products-carousel-next",
+            prevEl: ".products-carousel-prev",
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            991: {
+              slidesPerView: 5,
+            },
+            1500: {
+              slidesPerView: 8,
+            },
+          }
+        });
+}
 function Index() {
   const [products,setProducts] = useState([]);
 
   useEffect(()=>{
     axios.get(import.meta.env.VITE_productEndPoint+'/products')
-    .then(res=>{
+    .then(async res=>{
       console.log('rth--',res.data.products);
       
-      setProducts(res.data.products);
+      await setProducts(res.data.products);
+      runSwiper();
     })
     .catch(err=>{
       console.log(err);

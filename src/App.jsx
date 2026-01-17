@@ -16,12 +16,14 @@ import Product from './components/pages/Product';
 import Masterpage from './components/pages/Masterpage';
 import Products from './components/pages/Products';
 import Cart from './components/pages/cart/Cart';
+import ScrollToTop from './components/includes/ScrollToTop';
 
 function App() {
 
   return (
     <>
       {/* <Symbol /> */}
+      <ScrollToTop/>
       <Pages />
       
       <Sidebar />
