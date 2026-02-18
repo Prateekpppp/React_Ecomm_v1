@@ -3,6 +3,8 @@ import toggle from '../../assets/images/toggle.png'
 import { Link } from 'react-router-dom'
 
 function Header() {
+
+    let isLoggedIn = false;
   return (
     <>
         <header>
@@ -67,21 +69,32 @@ function Header() {
                 
                 <div className="col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
                     <ul className="d-flex justify-content-end list-unstyled m-0">
-                    <li>
-                        <a href="#" className="p-2 mx-1">
-                            <i className="fa fa-user"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="p-2 mx-1">
-                            <i className="fa fa-heart"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                            <i className="fa fa-cart-plus"></i>
-                        </a>
-                    </li>
+                    {isLoggedIn ?
+                        (  
+                        <>
+                            <li>
+                                <a href="#" className="p-2 mx-1">
+                                    <i className="fa fa-user"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" className="p-2 mx-1">
+                                    <i className="fa fa-heart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" className="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                                    <i className="fa fa-cart-plus"></i>
+                                </a>
+                            </li>
+                        </>
+                        )
+                    : (
+                        <li>
+                            <Link to='/register' className="dropdown-item">Register</Link>
+                        </li>
+                        )
+                    }
                     </ul>
                 </div>
 
