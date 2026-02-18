@@ -1,7 +1,9 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import './assets/fonts/font-awesome.min.js';
 import 'swiper/swiper-bundle.css';
+import './assets/css/font-awesome.min.css';
 import './assets/css/normalize.css';
 import './assets/css/vendor.css';
 import './assets/css/template/style.css';
@@ -30,6 +32,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Index/>} />
+        <Route path='products' element={<Products/>} />
         <Route path='/view' element={<Masterpage/>} >
           <Route path='products' element={<Products/>} />
           <Route path='products/:category' element={<Products/>} />

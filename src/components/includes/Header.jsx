@@ -33,7 +33,7 @@ function Header() {
                         </select>
                     </div>
                     <div className="col-11 col-md-7">
-                        <form id="search-form" className="text-center" action="index.html" method="post">
+                        <form id="search-form" className="text-center">
                         <input type="text" className="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products" />
                         </form>
                     </div>
@@ -45,38 +45,41 @@ function Header() {
 
                 <div className="col-lg-4">
                     <ul className="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
-                    <li className="nav-item active">
-                        <a href="index.html" className="nav-link">Home</a>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                        <ul className="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                            <li>
-                                <Link to='/view/products' className="dropdown-item">Products </Link>
-                            </li>
-                            <li>
-                                <Link to='/view/cart' className="dropdown-item">Cart </Link>
-                            </li>
-                        </ul>
-                    </li>
+                        <li className="nav-item active">
+                            <Link to='/'>
+                                Home
+                            </Link>
+                            {/* <a href="index.html" className="nav-link">Home</a> */}
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <ul className="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
+                                <li>
+                                    <Link to='/products' className="dropdown-item">Products </Link>
+                                </li>
+                                <li>
+                                    <Link to='/view/cart' className="dropdown-item">Cart </Link>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 
-                <div className="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
+                <div className="col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
                     <ul className="d-flex justify-content-end list-unstyled m-0">
                     <li>
                         <a href="#" className="p-2 mx-1">
-                        <svg width="24" height="24"><use xlinkHref="#user"></use></svg>
+                            <i className="fa fa-user"></i>
                         </a>
                     </li>
                     <li>
                         <a href="#" className="p-2 mx-1">
-                        <svg width="24" height="24"><use xlinkHref="#wishlist"></use></svg>
+                            <i className="fa fa-heart"></i>
                         </a>
                     </li>
                     <li>
                         <a href="#" className="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                        <svg width="24" height="24"><use xlinkHref="#shopping-bag"></use></svg>
+                            <i className="fa fa-cart-plus"></i>
                         </a>
                     </li>
                     </ul>

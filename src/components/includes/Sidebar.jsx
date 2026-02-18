@@ -22,7 +22,7 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className="nav-item border-dashed" data-bs-dismiss="offcanvas">
-                    <Link to='/view/product' className="nav-link d-flex align-items-center gap-3 text-dark p-2">
+                    <Link to='/view/products' className="nav-link d-flex align-items-center gap-3 text-dark p-2">
                     <svg width="24" height="24" viewBox="0 0 24 24"><use xlinkHref="#dairy"></use></svg>
                     <span>Dairy and Eggs</span>
                     </Link>
