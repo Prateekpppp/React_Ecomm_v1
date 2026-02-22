@@ -73,7 +73,8 @@ function Employees() {
     }
 
     useEffect(() => {
-
+        console.log('run');
+        
         fetchEmployees();
       
     },[]);
