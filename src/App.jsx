@@ -20,11 +20,12 @@ import Products from './components/pages/Products';
 import Cart from './components/pages/cart/Cart';
 import ScrollToTop from './components/includes/ScrollToTop';
 import Register from './User/Register';
+import Employees from './components/pages/Employees';
 
 function App() {
 
   const location = useLocation();
-  const showHeader = location.pathname !== '/register' && location.pathname !== '/login';
+  const showHeader = location.pathname !== '/register' && location.pathname !== '/login' && location.pathname !== '/employee' && location.pathname !== '/attendance' && location.pathname !== '/';
 
   return (
     <>
@@ -35,7 +36,10 @@ function App() {
       {showHeader && <ScrollToTop />}
       
       <Routes>
-        <Route path='/' element={<Index/>} />
+        {/* <Route path='/' element={<Index/>} /> */}
+        <Route path='/' element={<Employees/>} />
+        <Route path='/employees' element={<Employees/>} />
+        <Route path='/attendance' element={<Index/>} />
         <Route path='/register' element={<Register/>} />
         {/* <Route path='/login' element={<Register/>} /> */}
         <Route path='products' element={<Products/>} />
