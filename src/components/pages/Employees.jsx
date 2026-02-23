@@ -1,7 +1,4 @@
 import React, { Component, useEffect } from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
@@ -21,7 +18,6 @@ function Employees() {
         
       axios.get(`${backend_url}/api/v1/employees`)
       .then((res)=>{
-        console.log('res--',res);
         
         setEmployees(res.data);
         
@@ -32,19 +28,19 @@ function Employees() {
 
     }
 
-    const submitFeedback = ()=>{
+    const addEmployee = ()=>{
         let data = {
             fullName:fullName,
             email:email,
             department:department
         };
-        console.log(data);
 
-        axios.post('http://localhost:8000/api/v1/employees',data)
+        axios.post(backend_url+'/api/v1/employees',data)
         .then((res)=>{
             if(res.status == 201){
                 // setEmployees('');
                 setResponse('Employee Added Successfully');
+                fetchEmployees();
             }
             setTimeout(() => {
                 setResponse(false);
@@ -58,10 +54,11 @@ function Employees() {
 
     const deleteEmployee = (id) =>{
         
-        axios.delete('http://localhost:8000/api/v1/employee',{id:id})
+        axios.delete(`${backend_url}/api/v1/employee/${id}/`)
         .then((res)=>{
-            if(res.status == 201){
+            if(res.status == 204){
                 setResponse('Employee Deleted Succesfully');
+                fetchEmployees();
             }
             setTimeout(() => {
                 setResponse(false);
@@ -73,7 +70,6 @@ function Employees() {
     }
 
     useEffect(() => {
-        console.log('run');
         
         fetchEmployees();
       
@@ -99,7 +95,7 @@ function Employees() {
                             <input onChange={(e)=>setdepartment(e.target.value)} name="department" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Department"/>
                         </div>
                         <div className="form-group">
-                            <button type="button" className="btn btn-primary mt-2" onClick={()=>submitFeedback()}>Submit</button>
+                            <button type="button" className="btn btn-primary mt-2" onClick={()=>addEmployee()}>Submit</button>
                         </div>
                     </form>
                     
@@ -109,7 +105,7 @@ function Employees() {
 
                 </div>
 
-                <div className="col-lg-6 px-3">
+                <div className="col-lg-6 px-3 overflow-x-scroll">
                     <Table striped bordered hover>
                     <thead>
                         <tr>

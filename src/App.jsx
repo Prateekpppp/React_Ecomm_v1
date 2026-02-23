@@ -21,6 +21,8 @@ import Cart from './components/pages/cart/Cart';
 import ScrollToTop from './components/includes/ScrollToTop';
 import Register from './User/Register';
 import Employees from './components/pages/Employees';
+import Employeeattendance from './components/pages/Employeeattendance';
+import Employeeheader from './components/includes/Employeeheader';
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
   return (
     <>
       {/* <Symbol /> */}
+      {!showHeader && <Employeeheader />}
       {showHeader && <Header />}
       {showHeader && <Sidebar />}
       {showHeader && <Pages />}
@@ -39,7 +42,7 @@ function App() {
         {/* <Route path='/' element={<Index/>} /> */}
         <Route path='/' element={<Employees/>} />
         <Route path='/employees' element={<Employees/>} />
-        <Route path='/attendance' element={<Index/>} />
+        <Route path='/attendance' element={<Employeeattendance/>} />
         <Route path='/register' element={<Register/>} />
         {/* <Route path='/login' element={<Register/>} /> */}
         <Route path='products' element={<Products/>} />
