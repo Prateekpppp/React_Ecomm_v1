@@ -7,9 +7,9 @@ import { backend_url } from '../../env';
 function Employeeattendance() {
 
     const [employees, setEmployees] = useState([]);
-    const [employeeStatus, setEmployeeStatus] = useState([]);
-    const [date, setDate] = useState('');
+    const [employeeStatus, setEmployeeStatus] = useState({});
 
+    
     const getCurrentDate = () => {
     const dateObj = new Date();
     
@@ -19,6 +19,10 @@ function Employeeattendance() {
     
     return `${year}-${month}-${day}`;
     };
+
+    const [date, setDate] = useState(getCurrentDate());
+
+
     const fetchEmployees = ()=>{
         
       axios.get(`${backend_url}/api/v1/employeeattendance?date=${date}`)
@@ -51,6 +55,7 @@ function Employeeattendance() {
             console.log('res--',res);
             
             // setEmployees(res.data);
+            fetchEmployees();
             
         })
         .catch((err)=>{
