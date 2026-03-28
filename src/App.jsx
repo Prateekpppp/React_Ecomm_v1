@@ -27,8 +27,8 @@ import Employeeheader from './components/includes/Employeeheader';
 function App() {
 
   const location = useLocation();
-  const showHeader = location.pathname !== '/register' && location.pathname !== '/login' && location.pathname !== '/employee' && location.pathname !== '/attendance' && location.pathname !== '/';
-
+  // const showHeader = location.pathname !== '/register' && location.pathname !== '/login' && location.pathname !== '/employee' && location.pathname !== '/attendance' && location.pathname !== '/';
+  const showHeader = true;
   return (
     <>
       {/* <Symbol /> */}
@@ -39,8 +39,8 @@ function App() {
       {showHeader && <ScrollToTop />}
       
       <Routes>
-        {/* <Route path='/' element={<Index/>} /> */}
-        <Route path='/' element={<Employees/>} />
+        <Route path='/' element={<Index/>} />
+        {/* <Route path='/' element={<Employees/>} /> */}
         <Route path='/employees' element={<Employees/>} />
         <Route path='/attendance' element={<Employeeattendance/>} />
         <Route path='/register' element={<Register/>} />
